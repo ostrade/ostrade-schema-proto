@@ -4,6 +4,8 @@
     <file url="file://$PROJECT_DIR$/ostrade-schema-proto-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ostrade-schema-proto-common/src/main/protobuf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ostrade-schema-proto-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ostrade-schema-proto-instrument/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ostrade-schema-proto-instrument/src/main/protobuf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ostrade-schema-proto-trade/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ostrade-schema-proto-trade/src/main/protobuf" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ostrade-schema-proto-trade/src/main/resources" charset="UTF-8" />

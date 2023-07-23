@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+/*
+References:
+https://www.cmegroup.com/clearing/files/SecurityDefinitionFIXMLFutures.pdf
+
+ */
+
+option java_package = "org.ostrade.schema.proto.instrument";
+option java_outer_classname = "InstrumentProto";
+
+package ostrade.instrument;
+
+import "ostrade/common/date.proto";
+
+enum Market {
+  MARKET_UNSPECIFIED = 0;
+}
+
+enum SecurityType { //https://www.onixs.biz/fix-dictionary/5.0.sp2.ep266/tagnum_167.html
+  SECURITY_TYPE_UNSPECIFIED = 0;
+  SECURITY_TYPE_MULTILEG = 1;
+  SECURITY_TYPE_FUTURE = 2;
+  SECURITY_TYPE_OPTION = 3;
+  SECURITY_TYPE_OPTION_ON_FUTURES = 4;
+  SECURITY_TYPE_SWAP_COMMODITY = 5;
+  SECURITY_TYPE_FORWARD = 6;
+}
+
+enum SecuritySubType {
+  SECURITY_SUB_TYPE_UNSPECIFIED = 0;
+  SECURITY_SUB_TYPE_CALENDAR = 1;
+  SECURITY_SUB_TYPE_BUTTERFLY = 2;
+}
+
+message MaturityMonthYear {
+  int32 year = 1;
+  int32 month = 2;
+}
+
+message SecurityId {
+  string source = 1;
+  string value = 2;
+}
+
+message Instrument {
+  string cfi_code = 1;
+  string symbol = 2;
+  repeated SecurityId security_ids = 3;
+  SecurityType security_type = 4;
+  SecuritySubType security_sub_type = 5;
+  Market market = 6;
+  ostrade.common.Date maturity_date = 7;
+
+}

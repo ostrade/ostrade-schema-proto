@@ -11,6 +11,7 @@
 
     <modules>
         <module>ostrade-schema-proto-common</module>
+        <module>ostrade-schema-proto-instrument</module>
         <module>ostrade-schema-proto-trade</module>
     </modules>
 
