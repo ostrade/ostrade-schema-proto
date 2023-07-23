@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.ostrade.schema.proto.common";
+option java_outer_classname = "CurrencyProto";
+
+package ostrade.common;
+
+enum Currency {
+  CURRENCY_UNSPECIFIED = 0;
+  CURRENCY_USD = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.ostrade.schema.proto.common";
+option java_outer_classname = "InstrumentTypeProto";
+
+package ostrade.common;
+
+enum InstrumentType {
+  INSTRUMENT_TYPE_UNSPECIFIED = 0;
+  INSTRUMENT_TYPE_FUTURE = 1;
+  INSTRUMENT_TYPE_OPTION = 2;
+  INSTRUMENT_TYPE_SWAP = 3;
+  INSTRUMENT_TYPE_MULTILEG = 4;
+}

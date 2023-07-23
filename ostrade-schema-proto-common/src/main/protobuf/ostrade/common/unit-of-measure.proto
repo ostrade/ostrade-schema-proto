@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.ostrade.schema.proto.common";
+option java_outer_classname = "UnitOfMeasureProto";
+
+package ostrade.common;
+
+enum UnitOfMeasure {
+  UNIT_OF_MEASURE_UNSPECIFIED = 0;
+  UNIT_OF_MEASURE_MWH = 1;
+  UNIT_OF_MEASURE_MMBTU = 2;
+  UNIT_OF_MEASURE_BBL = 3;
+  UNIT_OF_MEASURE_GAL = 4;
+}

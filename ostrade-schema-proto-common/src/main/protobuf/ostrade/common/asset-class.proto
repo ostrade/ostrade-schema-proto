@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.ostrade.schema.proto.common";
+option java_outer_classname = "AssetClassProto";
+
+package ostrade.common;
+
+enum AssetClass {
+  ASSET_CLASS_UNSPECIFIED = 0;
+  ASSET_CLASS_COMMODITY = 1;
+}
+
+enum AssetSubClass {
+  ASSET_SUB_CLASS_UNSPECIFIED = 0;
+  ASSET_SUB_CLASS_ENERGY = 1;
+}

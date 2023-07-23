@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.ostrade.schema.proto.common";
+option java_outer_classname = "FrequencyProto";
+
+package ostrade.common;
+
+enum Frequency {
+  FREQUENCY_UNSPECIFIED = 0;
+  FREQUENCY_ADHOC = 1;
+  FREQUENCY_END_OF_TERM = 2;
+  FREQUENCY_SECOND = 3;
+  FREQUENCY_MINUTE = 4;
+  FREQUENCY_HOUR = 5;
+  FREQUENCY_DAY = 6;
+  FREQUENCY_WEEK = 7;
+  FREQUENCY_MONTH = 8;
+  FREQUENCY_QUARTER = 9;
+  FREQUENCY_YEAR = 10;
+}

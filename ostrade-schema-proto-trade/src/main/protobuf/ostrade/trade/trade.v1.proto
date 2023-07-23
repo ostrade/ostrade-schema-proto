@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+option java_package = "org.ostrade.schema.proto.trade";
+
+package ostrade.trade;
+
+import "ostrade/common/asset-class.proto";
+import "ostrade/common/currency.proto";
+import "ostrade/common/date.proto";
+import "ostrade/common/decimal.proto";
+import "ostrade/common/delivery-location.proto";
+import "ostrade/common/frequency.proto";
+import "ostrade/common/instrument-type.proto";
+import "ostrade/common/unit-of-measure.proto";
+import "ostrade/common/price-reference.proto";
+import "google/protobuf/timestamp.proto";
+
+message TradeId {
+
+  enum TradeIdType {
+    TRADE_ID_TYPE_UNSPECIFIED = 0;
+    TRADE_ID_TYPE_UTI = 1;
+    TRADE_ID_TYPE_SYSTEM = 2;
+  }
+
+  string trade_id = 1;
+  TradeIdType trade_id_type = 2;
+  string trade_id_source = 3;
+
+}
+
+message LegalEntity {
+  string lei = 1;
+}
+
+message Instrument {
+  string cfi_code = 1;
+  string symbol = 2;
+}
+
+message Trade {
+  TradeHeader trade_header = 1;
+
+  repeated TradeLeg trade_legs = 100;
+}
+
+message TradeHeader {
+  repeated TradeId trade_ids = 1;
+  ostrade.common.AssetClass asset_class = 2;
+  ostrade.common.AssetSubClass asset_sub_class = 3;
+  Instrument instrument = 4;
+  google.protobuf.Timestamp transaction_timestamp = 5;
+  ostrade.common.Date business_date = 6;
+  ostrade.common.Date trade_date = 7;
+  ostrade.common.Date start_date = 8;
+  ostrade.common.Date end_date = 9;
+}
+
+message TradeLeg {
+  LegalEntity payer = 1;
+  LegalEntity receiver = 2;
+  Instrument instrument = 3;
+  ostrade.common.Decimal quantity = 4;
+  ostrade.common.UnitOfMeasure quantity_uom = 5;
+  ostrade.common.Frequency quantity_frequency = 6;
+  ostrade.common.Decimal price = 7;
+  ostrade.common.Currency price_currency = 8;
+  ostrade.common.DeliveryLocation delivery_location = 9;
+  ostrade.common.PriceReference price_reference = 10;
+}
